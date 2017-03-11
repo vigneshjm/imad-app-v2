@@ -6,8 +6,9 @@ var element=document.getElementById('main-text');
 element.innerHTML='New Value';
 
 var img=document.getElementById('dino');
+var marginLeft=0;
 function moveright(){
- var marginLeft=0;
+ 
  marginLeft=marginLeft+5;
  img.style.marginLeft=marginLeft + 'px';
 }
