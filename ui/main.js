@@ -1,16 +1,21 @@
-console.log('Loaded!');
-
-//change the text of main-text div
-
-var element=document.getElementById('main-text');
-element.innerHTML='New Value';
-
-var img=document.getElementById('dino');
-var marginLeft=0;
-function moveRight(){
- marginLeft=marginLeft+5;
- img.style.marginLeft=marginLeft + 'px';
-}
-img.onclick=function(){
-    var interval=setInterval(moveRight,100);
+//counter code
+var button=document.getElementById("counter");
+button.onclick= function(){
+    //create request object
+    var request =new XMLHTTPrequest();
+    //Capture the response and store it in a variable
+    request.onreadystatechange=function(){
+        if(request.status=== XMLHTTPRequest.DONE){
+            //Take some action
+            if(request.status ===200){
+            var counter=request.resposeText;
+            var span=document.getElementById("count");
+            span.innerHTML=counter.toString();
+            
+        }
+    }
+};
+//make the request
+request.open('GET','http://vigneshjm.imad.hasura-app.io/',true);
+request.send(null);
 };
